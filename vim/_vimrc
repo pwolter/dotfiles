@@ -1,0 +1,200 @@
+set nofoldenable
+syntax on
+
+" Need to set this flag on in order to have many cool features on
+set nocompatible
+
+" Sweet colorscheme
+" colorscheme frozen
+" set background=dark
+
+if has('gui_running')
+  set background=dark
+  colorscheme frozen
+else
+  set background=dark
+  colorscheme frozen
+endif
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf-8
+
+" Change default fontsize to fit MacBook Pro 13'
+" set guifont=Monaco:h12
+
+" Display line numbers on the left
+set number
+
+" Use mouse (only for resizing!)
+set mouse=a
+
+" Set the focus to the correct screen (ok, no more mouse thingies)
+set mousefocus
+
+" split navigations
+set splitbelow
+set splitright
+
+" coc.nvim jsonc command
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" Enable folding with the spacebar
+nnoremap <space> za
+
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'preservim/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'mbbill/code_complete'
+Plugin 'shougo/neocomplete.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'hashivim/vim-terraform'
+Plugin 'juliosueiras/vim-terraform-completion'
+Plugin 'fatih/vim-hclfmt'
+Plugin 'b4b4r07/vim-hcl'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'tpope/vim-surround'
+Plugin 'jceb/vim-orgmode'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+" No more annoying sounds
+set visualbell
+
+" Do not scroll sideways unless we reach the end of the screen
+set sidescrolloff=0
+
+" pydiction stuff
+let g:pydiction_location = '~/pydiction/complete-dict'
+
+" Airline color theme
+let g:airline_theme='papercolor'
+let g:airline_powerline_fonts = 1
+
+" highlight the status bar when in insert mode
+if version >= 700
+    if has("gui_running")
+        au InsertEnter * hi StatusLine guifg=black guibg=green
+        au InsertLeave * hi StatusLine guibg=black guifg=grey
+		if has("gui_macvim")
+			" MacVim
+		set guifont=MesloLGS-NF-Regular:h11
+		endif
+    else
+        au InsertEnter * hi StatusLine ctermfg=235 ctermbg=2
+        au InsertLeave * hi StatusLine ctermbg=240 ctermfg=12
+    endif
+endif
+
+" Infere the case-sensitivity
+set infercase
+
+" Indent properly based on the current file
+filetype indent plugin on
+filetype plugin on
+
+" Pathogen load
+"filetype off " Makes syntax non-working on office box
+call pathogen#infect()
+call pathogen#helptags()
+
+" Switch between files in buffer
+" nnoremap <C-Tab> :bn<CR>
+" nnoremap <C-S-Tab> :bp<CR>
+
+" Command-line fuzzy finder
+" If installed using Homebrew
+set rtp+=/usr/local/opt/fzf
+
+" Don't select first Omni-completion option
+set completeopt=longest,menuone
+set completeopt=menuone,longest,preview
+
+set tabstop=4     " a tab is four spaces
+set backspace=indent,eol,start
+                  " allow backspacing over everything in insert mode
+" set autoindent    " always set autoindenting on
+set copyindent    " copy the previous indentation on autoindenting
+" set shiftwidth=4  " number of spaces to use for autoindenting
+set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
+set incsearch     " show search matches as you type
+" set expandtab
+set shiftwidth=4
+set softtabstop=4
+
+" Always set the current file directory as the local current directory
+autocmd BufEnter * silent! lcd %:p:h
+
+" Enable folding
+" nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+" vnoremap <Space> zf
+
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many levels of undo
+
+" Tabs in command line mode behave like bash
+set wildmode=longest,list,full
+set wildmenu
+
+" Highlight the entire word when searching for it
+set hlsearch
+
+" Make tabs, trailing whitespace, and non-breaking spaces visible
+" exec \"set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~\"
+" set list
+
+" Move line by line even when the line is wrapped
+map j gj
+map k gk
+
+" Persistent undo
+set undofile                " Save undo's after file closes
+set undodir=$HOME/.vim/undo " where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo
+
+" YouCompleteMe
+" let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py"
+" nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" Enable folding with the spacebar
+" nnoremap <space> za
+
+" Use same clipboard as mac
+set clipboard=unnamed
+
+" let g:ycm_server_python_interpreter = '/Users/pwolter/opt/anaconda3/bin/python'
+
+" Options for vim-orgmode
+packloadall
+silent! helptags ALL
