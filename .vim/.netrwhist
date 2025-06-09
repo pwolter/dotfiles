@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/Users/Pablo.Wolter/Exercism/python/matrix'
+let g:netrw_dirhist_7='/Users/Pablo.Wolter/Exercism/python'
+let g:netrw_dirhist_6='/Users/Pablo.Wolter/Exercism'
+let g:netrw_dirhist_5='/Users/Pablo.Wolter'
+let g:netrw_dirhist_4='/Users/Pablo.Wolter/Documents'
+let g:netrw_dirhist_3='/Users/Pablo.Wolter/Documents/Training'
+let g:netrw_dirhist_2='/Users/Pablo.Wolter/Documents/Training/Python'
+let g:netrw_dirhist_1='/Users/Pablo.Wolter/Documents/Training/Python/python_projects'
+let g:netrw_dirhist_0='/Users/Pablo.Wolter/Documents/Training/Python'
+let g:netrw_dirhist_9='/Users/Pablo.Wolter/Documents/Training'
