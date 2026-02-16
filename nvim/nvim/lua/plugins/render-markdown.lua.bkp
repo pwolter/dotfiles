@@ -1,0 +1,7 @@
+return {
+  'MeanderingProgrammer/render-markdown.nvim',
+  opts = {
+    heading = { position = 'inline' },
+  },
+  dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+}
