@@ -40,3 +40,9 @@ These store settings outside `~/.config`, so they aren't symlinked:
   *Settings → General → Settings → "Load settings from a custom folder or URL"*
   and point it at `~/dotfiles/iterm2`.
 - **`dbeaver/`**, **`positron/`** — kept for reference; restore manually.
+
+## Tools
+
+- **`tools/nvim-cheatsheet/`** — generates a Neovim keybindings reference PDF.
+  `python3 tools/nvim-cheatsheet/generate.py` (add `--single-page` for a
+  one-page version). See its README for details.
