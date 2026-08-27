@@ -16,5 +16,8 @@ return {
         },
       },
     },
+    -- Disable Obsidian's own concealing/rendering; render-markdown.nvim is the
+    -- single markdown renderer (avoids double-conceal conflicts on notes).
+    ui = { enable = false },
   },
 }
