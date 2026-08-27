@@ -2,12 +2,12 @@
 return {
   -- https://github.com/nvim-treesitter/nvim-treesitter
   'nvim-treesitter/nvim-treesitter',
-  event = 'VeryLazy',
   dependencies = {
     -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     'nvim-treesitter/nvim-treesitter-textobjects',
   },
   build = ':TSUpdate',
+  event = 'VeryLazy',
   opts = {
     highlight = {
       enable = true,
@@ -19,7 +19,7 @@ return {
     },
   },
   config = function (_, opts)
-    local configs = require("nvim-treesitter.configs")
+    local configs = require("nvim-treesitter.config")
     configs.setup(opts)
   end
 }
