@@ -47,7 +47,7 @@ keymap.set("n", "<leader>ql", ":clast<CR>", { desc = "Jump to last quickfix list
 keymap.set("n", "<leader>qc", ":cclose<CR>", { desc = "Close quickfix list" }) -- close quickfix list
 
 -- Vim-maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = "Toggle maximize tab" }) -- toggle maximize tab
+keymap.set("n", "<leader>sz", ":MaximizerToggle<CR>", { desc = "Toggle maximize window (zoom)" }) -- toggle maximize (moved off <leader>sm to free the sm* prefix)
 
 -- Nvim-tree
 keymap.set("n", "<leader>ee", ":NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
@@ -99,7 +99,6 @@ keymap.set('n', '<leader>ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', { desc =
 keymap.set('n', '<leader>gl', '<cmd>lua vim.diagnostic.open_float()<CR>', { desc = "Show diagnostics in a floating window" })
 keymap.set('n', '<leader>gp', '<cmd>lua vim.diagnostic.get_prev()<CR>', { desc = "Get the previous diagnostic" })
 keymap.set('n', '<leader>gn', '<cmd>lua vim.diagnostic.get_next()<CR>', { desc = "Get the next diagnostic" })
-keymap.set('n', '<leader>tr', '<cmd>lua vim.lsp.buf.document_symbol()<CR>', { desc = "Lists all symbols in current buffer" })
 keymap.set('n', '<leader>td', function () vim.diagnostic.enable(not vim.diagnostic.is_enabled()); end, { desc = "Disable diagnostic" })
 keymap.set('i', '<C-Space>', '<cmd>lua vim.lsp.buf.completion()<CR>', { desc = "Retrieves the completion items" })
 

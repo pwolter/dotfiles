@@ -25,6 +25,7 @@ return {
 			{ "<leader>q", group = "Quit / Quickfix" },
 			{ "<leader>r", group = "Rename" },
 			{ "<leader>s", group = "Split / window" },
+			{ "<leader>sm", group = "Split: move to window" },
 			{ "<leader>t", group = "Tabs / symbols" },
 			{ "<leader>w", group = "Write / save" },
 			{ "<leader>x", group = "REST client" },
