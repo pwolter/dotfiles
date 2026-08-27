@@ -1,2 +1,5 @@
 .DS_Store
 *.bkp
+.zsh_history
+.zsh_sessions/
+.zcompdump*

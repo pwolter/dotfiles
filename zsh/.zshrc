@@ -17,14 +17,15 @@ if type brew &>/dev/null; then
 fi
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/pwolter/.oh-my-zsh"
+export ZSH="/Users/pablo.wolter/.oh-my-zsh"
 
 # virtualenv info
 
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Development/Projects
+export PROJECT_HOME=$HOME/Projects
 
-export ANACONDA_HOME=/$HOME/opt/anaconda3
+# export ANACONDA_HOME=/$HOME/anaconda3
+export ANACONDA_HOME=/$HOME/miniforge3
 
 export VIRTUALENVWRAPPER_PYTHON=$ANACONDA_HOME/bin/python
 export VIRTUALENVWRAPPER_VIRTUALENV=$ANACONDA_HOME/bin/virtualenv
@@ -105,7 +106,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions)
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
@@ -132,9 +133,6 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # Miscelaneous aliases I use
 
 alias ll="ls -lrt"
@@ -147,7 +145,7 @@ alias ga="git add ."
 alias gt="git add ."
 
 alias ..="cd .."
-alias dev="cd /Users/pwolter/Development"
+alias dev="cd /Users/pablo.wolter/Development"
 
 alias hi="history | grep "
 alias pss="ps -ef | grep -v grep | grep "
@@ -156,13 +154,13 @@ alias jn="$ANACONDA_HOME/bin/jupyter notebook --browser='chrome' &"
 alias jl="$ANACONDA_HOME/bin/jupyter lab --browser='chrome' &"
 alias jq="$ANACONDA_HOME/bin/jupyter qtconsole &"
 
-export SPARK_HOME=/Users/pwolter/spark
+alias clean_hf="rm -rf /Users/pablo.wolter/.cache/huggingface"
+
+export SPARK_HOME=/Users/pablo.wolter/spark
 export PATH=$PATH:$SPARK_HOME/bin
 
 export PYSPARK_DRIVER_PYTHON=jupyter
 export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
-
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Add Visual Studio Code (code)
 export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/opt/local/bin:$PATH"
@@ -174,20 +172,52 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 # GOPATH
-export GOPATH="/Users/pwolter/go/bin"
+export GOPATH="/Users/pablo.wolter/go/bin"
+
+# imgcat PATH
+export PATH="/usr/local/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/pwolter/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/pablo.wolter/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/pwolter/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/pwolter/opt/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/pablo.wolter/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/Users/pablo.wolter/miniforge3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/pwolter/opt/anaconda3/bin:$PATH"
+        export PATH="/Users/pablo.wolter/miniforge3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/sqlite/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/sqlite/include"
+export PATH="/opt/homebrew/bin:$PATH"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba shell init' !!
+export MAMBA_EXE='/Users/pablo.wolter/miniforge3/bin/mamba';
+export MAMBA_ROOT_PREFIX='/Users/pablo.wolter/miniforge3';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias mamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+export PATH="/opt/homebrew/bin:$PATH"
+fpath+=/opt/homebrew/share/zsh/site-functions
+autoload -Uz compinit && compinit
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/Library/TeX/texbin:$PATH"
+export PATH="/Library/TeX/texbin:$PATH"
