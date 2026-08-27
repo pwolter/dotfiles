@@ -4,3 +4,5 @@
 .zsh_sessions/
 .zcompdump*
 exercism/.config/exercism/user.json
+.vim/bundle/
+.vim/autoload/
