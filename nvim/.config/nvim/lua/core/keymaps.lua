@@ -99,7 +99,7 @@ keymap.set('n', '<leader>ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', { desc =
 keymap.set('n', '<leader>gl', '<cmd>lua vim.diagnostic.open_float()<CR>', { desc = "Show diagnostics in a floating window" })
 keymap.set('n', '<leader>gp', '<cmd>lua vim.diagnostic.get_prev()<CR>', { desc = "Get the previous diagnostic" })
 keymap.set('n', '<leader>gn', '<cmd>lua vim.diagnostic.get_next()<CR>', { desc = "Get the next diagnostic" })
-keymap.set('n', '<leader>td', function () vim.diagnostic.enable(not vim.diagnostic.is_enabled()); end, { desc = "Disable diagnostic" })
+keymap.set('n', '<leader>td', function () vim.diagnostic.enable(not vim.diagnostic.is_enabled()); end, { desc = "Toggle diagnostics" })
 keymap.set('i', '<C-Space>', '<cmd>lua vim.lsp.buf.completion()<CR>', { desc = "Retrieves the completion items" })
 
 -- Debugging
@@ -123,12 +123,12 @@ keymap.set("n", '<leader>dh', '<cmd>Telescope dap commands<cr>', { desc = "Teles
 keymap.set("n", '<leader>de', function() require('telescope.builtin').diagnostics({default_text=":E:"}) end, { desc = "Telescope diagnostics E" })
 
 -- Markdown (render-markdown.nvim: in-editor rendering)
-keymap.set("n", "<leader>mre", function () require("render-markdown").enable() end, { desc = "Markdoen render - enable" })
-keymap.set("n", "<leader>mrd", function () require("render-markdown").disable() end, { desc = "Markdoen render - disable" })
-keymap.set("n", "<leader>mrt", function () require("render-markdown").toggle() end, { desc = "Markdoen render - toggle" })
-keymap.set("n", "<leader>mse", function () vim.opt.spelllang = "en" vim.cmd("echo 'Spell language set to English'") end, { desc = "Markdoen language English" })
-keymap.set("n", "<leader>mss", function () vim.opt.spelllang = "es" vim.cmd("echo 'Spell language set to Spanish'") end, { desc = "Markdoen language Spanish" })
-keymap.set("n", "<leader>msb", function () vim.opt.spelllang = "en,es" vim.cmd("echo 'Spell language set to English and Spanish'") end, { desc = "Markdoen language English and Spanish" })
+keymap.set("n", "<leader>mre", function () require("render-markdown").enable() end, { desc = "Markdown render - enable" })
+keymap.set("n", "<leader>mrd", function () require("render-markdown").disable() end, { desc = "Markdown render - disable" })
+keymap.set("n", "<leader>mrt", function () require("render-markdown").toggle() end, { desc = "Markdown render - toggle" })
+keymap.set("n", "<leader>mse", function () vim.opt.spelllang = "en" vim.cmd("echo 'Spell language set to English'") end, { desc = "Markdown language English" })
+keymap.set("n", "<leader>mss", function () vim.opt.spelllang = "es" vim.cmd("echo 'Spell language set to Spanish'") end, { desc = "Markdown language Spanish" })
+keymap.set("n", "<leader>msb", function () vim.opt.spelllang = "en,es" vim.cmd("echo 'Spell language set to English and Spanish'") end, { desc = "Markdown language English and Spanish" })
 
 
 -- Obsidian

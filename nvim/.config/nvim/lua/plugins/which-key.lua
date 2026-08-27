@@ -26,7 +26,7 @@ return {
 			{ "<leader>r", group = "Rename" },
 			{ "<leader>s", group = "Split / window" },
 			{ "<leader>sm", group = "Split: move to window" },
-			{ "<leader>t", group = "Tabs / symbols" },
+			{ "<leader>t", group = "Tabs" },
 			{ "<leader>w", group = "Write / save" },
 			{ "<leader>x", group = "REST client" },
 		},

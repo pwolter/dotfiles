@@ -19,9 +19,9 @@ return {
     -- https://github.com/j-hui/fidget.nvim
     { 'j-hui/fidget.nvim', opts = {} },
 
-    -- Additional lua configuration, makes nvim stuff amazing!
-    -- https://github.com/folke/neodev.nvim
-    { 'folke/neodev.nvim', opts = {} },
+    -- Lua/nvim API completion & type checking when editing this config
+    -- https://github.com/folke/lazydev.nvim (successor to the archived neodev.nvim)
+    { 'folke/lazydev.nvim', ft = 'lua', opts = {} },
     { 'hrsh7th/cmp-nvim-lsp'},
   },
   config = function ()
@@ -56,43 +56,3 @@ return {
     })
   end,
 }
-
---    local lspconfig = require('lspconfig')
---    local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
---    local lsp_attach = function(client, bufnr)
-      -- Create your keybindings here...
- --   end
-
-    -- Call setup on each LSP server
---    require('mason-lspconfig').setup_handlers({
---      function(server_name)
---        lspconfig[server_name].setup({
---          on_attach = lsp_attach,
---          capabilities = lsp_capabilities,
---        })
---      end
---    })
-
-    -- Lua LSP settings
---    lspconfig.lua_ls.setup {
---      settings = {
---        Lua = {
---          diagnostics = {
-            -- Get the language server to recognize the `vim` global
---            globals = {'vim'},
---          },
---        },
---      },
---    }
-
-    -- Globally configure all LSP floating preview popups (like hover, signature help, etc)
---    local open_floating_preview = vim.lsp.util.open_floating_preview
---    function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
---      opts = opts or {}
---      opts.border = opts.border or "rounded" -- Set border to rounded
---      return open_floating_preview(contents, syntax, opts, ...)
---    end
-
---  end
---}
-
