@@ -39,7 +39,7 @@ These store settings outside `~/.config`, so they aren't symlinked:
 - **`iterm2/`** — iTerm2 loads its plist directly. In iTerm2:
   *Settings → General → Settings → "Load settings from a custom folder or URL"*
   and point it at `~/dotfiles/iterm2`.
-- **`dbeaver/`**, **`positron/`** — kept for reference; restore manually.
+- **`dbeaver/`** — kept for reference; restore manually.
 
 ## Tools
 
