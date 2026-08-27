@@ -6,9 +6,28 @@ return {
 		vim.o.timeoutlen = 500
 	end,
 	opts = {
-		-- your configuration comes here
-		-- or leave it empty to use the default settings
-		-- refer to the configuration section below
+		-- Names for the <leader> prefix groups so pressing <space> shows
+		-- meaningful category labels instead of "➜ +N keymaps".
+		spec = {
+			{ "<leader>b", group = "Debug: breakpoints" },
+			{ "<leader>c", group = "Diff / merge" },
+			{ "<leader>d", group = "Debug (DAP)" },
+			{ "<leader>e", group = "Explorer (nvim-tree)" },
+			{ "<leader>f", group = "Find (Telescope)" },
+			{ "<leader>g", group = "LSP / Goto / Git" },
+			{ "<leader>h", group = "Harpoon" },
+			{ "<leader>i", group = "Images" },
+			{ "<leader>m", group = "Markdown" },
+			{ "<leader>mr", group = "Markdown: render" },
+			{ "<leader>o", group = "Obsidian" },
+			{ "<leader>ol", group = "Obsidian: follow link" },
+			{ "<leader>q", group = "Quit / Quickfix" },
+			{ "<leader>r", group = "Rename" },
+			{ "<leader>s", group = "Split / window" },
+			{ "<leader>t", group = "Tabs / symbols" },
+			{ "<leader>w", group = "Write / save" },
+			{ "<leader>x", group = "REST client" },
+		},
 	},
 	keys = {
 		{
