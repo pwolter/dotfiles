@@ -3,3 +3,4 @@
 .zsh_history
 .zsh_sessions/
 .zcompdump*
+exercism/.config/exercism/user.json
