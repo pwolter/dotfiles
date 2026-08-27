@@ -138,6 +138,7 @@ fi
 alias ll="ls -lrt"
 alias la="ls -lrta"
 alias lh="ls -lrth"
+alias l.='ls -dl .[!.]*'   # list only hidden files/dirs (dotfiles), alphabetical
 
 alias gp="git pull"
 alias gf="git fetch"
