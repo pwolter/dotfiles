@@ -157,9 +157,6 @@ vim.keymap.set({ "n", "v", "i" }, "<C-a>", function()
     -- "Update" saves only if the buffer has been modified since the last save
     vim.cmd("update")
     print("Image pasted and file saved")
-    -- Only if updated I'll refresh the images by clearing them first
-    -- I'm using [[ ]] to escape the special characters in a command
-    vim.cmd([[lua require("image").clear()]])
     -- Reloads the file to reflect the changes
     vim.cmd("edit!")
     -- Switch back to command mode
@@ -299,9 +296,6 @@ vim.keymap.set("n", "<leader>id", function()
               { "Image file deleted from disk:\n", "Normal" },
               { absolute_image_path, "Normal" },
             }, false, {})
-            -- I'll refresh the images, but will clear them first
-            -- I'm using [[ ]] to escape the special characters in a command
-            vim.cmd([[lua require("image").clear()]])
             -- Reloads the file to reflect the changes
             vim.cmd("edit!")
           else
