@@ -19,11 +19,11 @@ keymap.set("n", "<leader>sx", ":close<CR>", { desc = "Close split window" }) -- 
 keymap.set("n", "<leader>sj", "<C-w>-", { desc = "Make split window height shorter" }) -- make split window height shorter
 keymap.set("n", "<leader>sk", "<C-w>+", { desc = "Make split window height taller" }) -- make split windows height taller
 keymap.set("n", "<leader>sl", "<C-w>>5", { desc = "Make split windows width bigger" }) -- make split windows width bigger 
-keymap.set("n", "<leader>sh", "<C-w><5", { desc = "Make split windows width smaller" }) -- make split windows width smaller
+keymap.set("n", "<leader>ws", "<C-w><5", { desc = "Make split windows width smaller" }) -- make split windows width smaller
 keymap.set("n", "<leader>sml", "<C-w>l", { desc = "Move to right split window" })
 keymap.set("n", "<leader>smh", "<C-w>h", { desc = "Move to left split window" })
-keymap.set("n", "<leader>smj", "<C-w>h", { desc = "Move to down split window" })
-keymap.set("n", "<leader>smk", "<C-w>h", { desc = "Move to up split window" })
+keymap.set("n", "<leader>smj", "<C-w>j", { desc = "Move to down split window" })
+keymap.set("n", "<leader>smk", "<C-w>k", { desc = "Move to up split window" })
 
 -- Tab management
 keymap.set("n", "<leader>to", ":tabnew<CR>", { desc = "Open in new tab" }) -- open a new tab
