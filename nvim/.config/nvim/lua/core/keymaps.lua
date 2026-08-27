@@ -123,12 +123,7 @@ keymap.set("n", '<leader>df', '<cmd>Telescope dap frames<cr>', { desc = "Telesco
 keymap.set("n", '<leader>dh', '<cmd>Telescope dap commands<cr>', { desc = "Telescope dap commands" })
 keymap.set("n", '<leader>de', function() require('telescope.builtin').diagnostics({default_text=":E:"}) end, { desc = "Telescope diagnostics E" })
 
--- Markdown preview
-keymap.set("n", '<leader>mp', ':MarkdownPreview<CR>', { desc = "Markdown preview" })
-keymap.set("n", '<leader>ms', ':MarkdownPreviewStop<CR>', { desc = "Markdown preview stop" })
-keymap.set("n", '<leader>mt', ':MarkdownPreviewToggle<CR>', { desc = "Markdown preview toggle" })
-
--- Markdown
+-- Markdown (render-markdown.nvim: in-editor rendering)
 keymap.set("n", "<leader>mre", function () require("render-markdown").enable() end, { desc = "Markdoen render - enable" })
 keymap.set("n", "<leader>mrd", function () require("render-markdown").disable() end, { desc = "Markdoen render - disable" })
 keymap.set("n", "<leader>mrt", function () require("render-markdown").toggle() end, { desc = "Markdoen render - toggle" })

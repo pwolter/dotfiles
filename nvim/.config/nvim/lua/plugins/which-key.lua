@@ -19,6 +19,7 @@ return {
 			{ "<leader>i", group = "Images" },
 			{ "<leader>m", group = "Markdown" },
 			{ "<leader>mr", group = "Markdown: render" },
+			{ "<leader>ms", group = "Markdown: spell" },
 			{ "<leader>o", group = "Obsidian" },
 			{ "<leader>ol", group = "Obsidian: follow link" },
 			{ "<leader>q", group = "Quit / Quickfix" },
