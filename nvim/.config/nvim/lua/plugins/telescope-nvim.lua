@@ -15,7 +15,7 @@ return {
       end,
     },
     { 'nvim-tree/nvim-web-devicons' },
-    { 'falke/todo-comments.nvim' },
+    { 'folke/todo-comments.nvim' },
   },
 --  opts = {
 --    defaults = {
