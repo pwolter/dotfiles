@@ -2,6 +2,7 @@
 *.bkp
 .zsh_history
 .zsh_sessions/
+.zshrc.local
 .zcompdump*
 exercism/.config/exercism/user.json
 .vim/bundle/

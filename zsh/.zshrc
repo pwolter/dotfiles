@@ -222,3 +222,6 @@ autoload -Uz compinit && compinit
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/Library/TeX/texbin:$PATH"
 export PATH="/Library/TeX/texbin:$PATH"
+
+# Machine-specific config (not tracked in git); e.g. work-only proxies, secrets
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
