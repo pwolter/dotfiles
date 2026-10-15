@@ -175,7 +175,7 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH"
 # GOPATH
 export GOPATH="/Users/pablo.wolter/go/bin"
 
-# imgcat PATH
+# /usr/local/bin PATH
 export PATH="/usr/local/bin:$PATH"
 
 # >>> conda initialize >>>
@@ -216,6 +216,7 @@ fi
 unset __mamba_setup
 # <<< mamba initialize <<<
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c50,)"
 export PATH="/opt/homebrew/bin:$PATH"
 fpath+=/opt/homebrew/share/zsh/site-functions
 autoload -Uz compinit && compinit
@@ -225,3 +226,6 @@ export PATH="/Library/TeX/texbin:$PATH"
 
 # Machine-specific config (not tracked in git); e.g. work-only proxies, secrets
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# Use local Terraform binary for Databricks CLI (avoids expired-GPG-key download error)
+export DATABRICKS_TF_EXEC_PATH=/opt/homebrew/bin/terraform
