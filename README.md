@@ -10,7 +10,7 @@ files belong under `$HOME` (e.g. `nvim/.config/nvim` → `~/.config/nvim`).
 git clone git@github.com:pwolter/dotfiles.git ~/dotfiles
 brew bundle --file ~/dotfiles/Brewfile      # installs stow and the rest
 cd ~/dotfiles
-stow nvim zsh vim geany
+stow nvim zsh vim geany ghostty
 ```
 
 If a target already exists (e.g. a default `~/.zshrc`), move or delete it first,
@@ -18,12 +18,13 @@ then re-run `stow <package>`.
 
 ## Stow packages
 
-| Package | Links into                               |
-|---------|------------------------------------------|
-| `nvim`  | `~/.config/nvim`                         |
-| `zsh`   | `~/.zshrc`, `~/.zprofile`, `~/.p10k.zsh` |
-| `vim`   | `~/.vimrc`                               |
-| `geany` | `~/.config/geany`                        |
+| Package   | Links into                               |
+|-----------|------------------------------------------|
+| `nvim`    | `~/.config/nvim`                         |
+| `zsh`     | `~/.zshrc`, `~/.zprofile`, `~/.p10k.zsh` |
+| `vim`     | `~/.vimrc`                               |
+| `geany`   | `~/.config/geany`                        |
+| `ghostty` | `~/.config/ghostty`                      |
 
 ## Vim plugins
 

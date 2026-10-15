@@ -1,0 +1,30 @@
+# Ghostty config
+# Docs: https://ghostty.org/docs/config   Reload: Cmd+Shift+,
+
+# --- Font ---
+font-family = "MesloLGS Nerd Font Mono"
+font-size = 13
+
+# --- Colors: Nord, same palette as the nvim colorscheme (gbprod/nord.nvim) ---
+theme = nord-nvim
+
+# --- Window ---
+window-width = 80
+window-height = 25
+background-opacity = 1.0
+window-save-state = always
+
+# --- Cursor ---
+cursor-style-blink = false
+
+# --- Keyboard ---
+macos-option-as-alt = left
+
+# --- Scrollback ---
+scrollback-limit = 100000000
+
+# --- Behavior ---
+quit-after-last-window-closed = true
+copy-on-select = false
+mouse-hide-while-typing = true
+shell-integration-features = cursor,sudo,title
