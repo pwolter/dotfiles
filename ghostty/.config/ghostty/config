@@ -25,6 +25,6 @@ scrollback-limit = 100000000
 
 # --- Behavior ---
 quit-after-last-window-closed = true
-copy-on-select = false
+copy-on-select = clipboard
 mouse-hide-while-typing = true
 shell-integration-features = cursor,sudo,title
