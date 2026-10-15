@@ -51,7 +51,7 @@ return {
       -- process_cmd = "convert - -quality 75 webp:-", ---@type string
 
       extension = "png", ---@type string
-      process_cmd = "convert - -quality 85 png:-", ---@type string
+      process_cmd = "magick - -quality 85 png:-", ---@type string
 
       -- extension = "jpg", ---@type string
       -- process_cmd = "convert - -quality 75 jpg:-", ---@type string
