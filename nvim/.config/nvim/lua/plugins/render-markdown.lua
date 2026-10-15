@@ -10,5 +10,11 @@ return {
   ft = { "markdown" },
   ---@module 'render-markdown'
   ---@type render.md.UserConfig
-  opts = {},
+  opts = {
+    code = {
+      -- Default 'hide' conceals the ``` fence lines, which also hides images
+      -- snacks.image attaches to them (Mermaid diagrams); draw thin borders instead
+      border = 'thin',
+    },
+  },
 }

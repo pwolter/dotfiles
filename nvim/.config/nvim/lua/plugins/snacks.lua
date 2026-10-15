@@ -18,6 +18,11 @@ return {
         -- and are never upscaled past their native resolution
         max_width = 200,
         max_height = 60,
+        -- Replace the source with the rendered image (shown again when the cursor
+        -- is on it): math is the default, add Mermaid diagrams (type "chart")
+        conceal = function(_, type)
+          return type == "math" or type == "chart"
+        end,
       },
       -- Obsidian embeds (![[Pasted image ...png]]) are relative to the vault's
       -- attachment folder, not the note, so look there when inside a vault
