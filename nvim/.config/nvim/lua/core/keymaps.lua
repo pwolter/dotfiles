@@ -97,8 +97,15 @@ keymap.set('n', '<leader>rr', '<cmd>lua vim.lsp.buf.rename()<CR>', { desc = "Ren
 keymap.set('n', '<leader>gf', '<cmd>lua vim.lsp.buf.format({async = true})<CR>', { desc = "Formats the buffer" })
 keymap.set('n', '<leader>ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', { desc = "Selects a code action" })
 keymap.set('n', '<leader>gl', '<cmd>lua vim.diagnostic.open_float()<CR>', { desc = "Show diagnostics in a floating window" })
-keymap.set('n', '<leader>gp', '<cmd>lua vim.diagnostic.get_prev()<CR>', { desc = "Get the previous diagnostic" })
-keymap.set('n', '<leader>gn', '<cmd>lua vim.diagnostic.get_next()<CR>', { desc = "Get the next diagnostic" })
+-- jump() moves the cursor (get_prev/get_next only return the diagnostic);
+-- on_jump then shows the diagnostic's message in a popup
+local function show_diagnostic(diagnostic, bufnr)
+  if diagnostic then
+    vim.diagnostic.open_float({ bufnr = bufnr, scope = "cursor", focus = false })
+  end
+end
+keymap.set('n', '<leader>gp', function() vim.diagnostic.jump({ count = -1, on_jump = show_diagnostic }) end, { desc = "Jump to the previous diagnostic" })
+keymap.set('n', '<leader>gn', function() vim.diagnostic.jump({ count = 1, on_jump = show_diagnostic }) end, { desc = "Jump to the next diagnostic" })
 keymap.set('n', '<leader>td', function () vim.diagnostic.enable(not vim.diagnostic.is_enabled()); end, { desc = "Toggle diagnostics" })
 keymap.set('i', '<C-Space>', '<cmd>lua vim.lsp.buf.completion()<CR>', { desc = "Retrieves the completion items" })
 
