@@ -2,6 +2,7 @@
 return {
   -- https://github.com/nvim-treesitter/nvim-treesitter (main branch)
   'nvim-treesitter/nvim-treesitter',
+  branch = 'main', -- old clones stay on the archived master branch otherwise
   dependencies = {
     -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     'nvim-treesitter/nvim-treesitter-textobjects',

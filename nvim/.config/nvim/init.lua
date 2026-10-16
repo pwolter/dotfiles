@@ -20,6 +20,9 @@ require("lazy").setup({
    spec = {
     { import = "plugins" },
    },
+   -- Keep the lockfile per machine (outside ~/dotfiles) so laptops never
+   -- overwrite each other's plugin versions through git
+   lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
    change_detection = {
     enabled = true, -- automatically check for config file changes and reload the ui
     notify = false, -- turn off notifications whenever plugin changes are made
