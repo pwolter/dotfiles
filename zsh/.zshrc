@@ -17,7 +17,7 @@ if type brew &>/dev/null; then
 fi
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/pablo.wolter/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # virtualenv info
 
@@ -146,7 +146,7 @@ alias ga="git add ."
 alias gt="git add ."
 
 alias ..="cd .."
-alias dev="cd /Users/pablo.wolter/Development"
+alias dev="cd $HOME/Development"
 
 alias hi="history | grep "
 alias pss="ps -ef | grep -v grep | grep "
@@ -155,9 +155,9 @@ alias jn="$ANACONDA_HOME/bin/jupyter notebook --browser='chrome' &"
 alias jl="$ANACONDA_HOME/bin/jupyter lab --browser='chrome' &"
 alias jq="$ANACONDA_HOME/bin/jupyter qtconsole &"
 
-alias clean_hf="rm -rf /Users/pablo.wolter/.cache/huggingface"
+alias clean_hf="rm -rf $HOME/.cache/huggingface"
 
-export SPARK_HOME=/Users/pablo.wolter/spark
+export SPARK_HOME=$HOME/spark
 export PATH=$PATH:$SPARK_HOME/bin
 
 export PYSPARK_DRIVER_PYTHON=jupyter
@@ -173,21 +173,21 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 # GOPATH
-export GOPATH="/Users/pablo.wolter/go/bin"
+export GOPATH="$HOME/go/bin"
 
 # /usr/local/bin PATH
 export PATH="/usr/local/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/pablo.wolter/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('$HOME/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/pablo.wolter/miniforge3/etc/profile.d/conda.sh" ]; then
-        . "/Users/pablo.wolter/miniforge3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniforge3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/pablo.wolter/miniforge3/bin:$PATH"
+        export PATH="$HOME/miniforge3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -205,8 +205,8 @@ export PATH="/opt/homebrew/bin:$PATH"
 
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba shell init' !!
-export MAMBA_EXE='/Users/pablo.wolter/miniforge3/bin/mamba';
-export MAMBA_ROOT_PREFIX='/Users/pablo.wolter/miniforge3';
+export MAMBA_EXE='$HOME/miniforge3/bin/mamba';
+export MAMBA_ROOT_PREFIX='$HOME/miniforge3';
 __mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__mamba_setup"
