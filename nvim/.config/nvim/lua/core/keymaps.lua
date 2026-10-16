@@ -70,17 +70,17 @@ keymap.set('n', '<leader>fl', '<cmd>Telescope buffers sort_mru=true sort_lastuse
 keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "Toggle git blame" }) -- toggle git blame
 
 -- Harpoon
-keymap.set("n", "<leader>ha", require("harpoon.mark").add_file)
-keymap.set("n", "<leader>hh", require("harpoon.ui").toggle_quick_menu)
-keymap.set("n", "<leader>h1", function() require("harpoon.ui").nav_file(1) end)
-keymap.set("n", "<leader>h2", function() require("harpoon.ui").nav_file(2) end)
-keymap.set("n", "<leader>h3", function() require("harpoon.ui").nav_file(3) end)
-keymap.set("n", "<leader>h4", function() require("harpoon.ui").nav_file(4) end)
-keymap.set("n", "<leader>h5", function() require("harpoon.ui").nav_file(5) end)
-keymap.set("n", "<leader>h6", function() require("harpoon.ui").nav_file(6) end)
-keymap.set("n", "<leader>h7", function() require("harpoon.ui").nav_file(7) end)
-keymap.set("n", "<leader>h8", function() require("harpoon.ui").nav_file(8) end)
-keymap.set("n", "<leader>h9", function() require("harpoon.ui").nav_file(9) end)
+keymap.set("n", "<leader>ha", require("harpoon.mark").add_file, { desc = "Harpoon: add file" })
+keymap.set("n", "<leader>hh", require("harpoon.ui").toggle_quick_menu, { desc = "Harpoon: toggle menu" })
+keymap.set("n", "<leader>h1", function() require("harpoon.ui").nav_file(1) end, { desc = "Harpoon: go to file 1" })
+keymap.set("n", "<leader>h2", function() require("harpoon.ui").nav_file(2) end, { desc = "Harpoon: go to file 2" })
+keymap.set("n", "<leader>h3", function() require("harpoon.ui").nav_file(3) end, { desc = "Harpoon: go to file 3" })
+keymap.set("n", "<leader>h4", function() require("harpoon.ui").nav_file(4) end, { desc = "Harpoon: go to file 4" })
+keymap.set("n", "<leader>h5", function() require("harpoon.ui").nav_file(5) end, { desc = "Harpoon: go to file 5" })
+keymap.set("n", "<leader>h6", function() require("harpoon.ui").nav_file(6) end, { desc = "Harpoon: go to file 6" })
+keymap.set("n", "<leader>h7", function() require("harpoon.ui").nav_file(7) end, { desc = "Harpoon: go to file 7" })
+keymap.set("n", "<leader>h8", function() require("harpoon.ui").nav_file(8) end, { desc = "Harpoon: go to file 8" })
+keymap.set("n", "<leader>h9", function() require("harpoon.ui").nav_file(9) end, { desc = "Harpoon: go to file 9" })
 
 -- Vim REST Console
 keymap.set("n", "<leader>xr", ":call VrcQuery()<CR>", { desc = "Run REST query" }) -- Run REST query
@@ -107,7 +107,6 @@ end
 keymap.set('n', '<leader>gp', function() vim.diagnostic.jump({ count = -1, on_jump = show_diagnostic }) end, { desc = "Jump to the previous diagnostic" })
 keymap.set('n', '<leader>gn', function() vim.diagnostic.jump({ count = 1, on_jump = show_diagnostic }) end, { desc = "Jump to the next diagnostic" })
 keymap.set('n', '<leader>td', function () vim.diagnostic.enable(not vim.diagnostic.is_enabled()); end, { desc = "Toggle diagnostics" })
-keymap.set('i', '<C-Space>', '<cmd>lua vim.lsp.buf.completion()<CR>', { desc = "Retrieves the completion items" })
 
 -- Debugging
 keymap.set("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", { desc = "Toggle breakpoint" })
@@ -151,26 +150,8 @@ keymap.set("n", "<leader>of", ':ObsidianSearch<CR>', { desc = "Search (or create
 
 
 -- Images
-vim.keymap.set({ "n", "v", "i" }, "<C-a>", function()
-  -- Call the paste_image function from the Lua API
-  -- Using the plugin's Lua API (require("img-clip").paste_image()) instead of the
-  -- PasteImage command because the Lua API returns a boolean value indicating
-  -- whether an image was pasted successfully or not.
-  -- The PasteImage command does not
-  -- https://github.com/HakonHarnes/img-clip.nvim/blob/main/README.md#api
-  local pasted_image = require("img-clip").paste_image()
-  if pasted_image then
-    -- "Update" saves only if the buffer has been modified since the last save
-    vim.cmd("update")
-    print("Image pasted and file saved")
-    -- Reloads the file to reflect the changes
-    vim.cmd("edit!")
-    -- Switch back to command mode
-    vim.cmd("stopinsert")
-  else
-    print("No image pasted. File not updated.")
-  end
-end, { desc = "Paste image from system clipboard" })
+-- (<C-a> paste-and-save lives in ftplugin/markdown.lua so <C-a> still
+-- increments numbers in every other filetype)
 
 -- Open image under cursor in the Preview app (macOS)
 vim.keymap.set("n", "<leader>io", function()
