@@ -17,6 +17,7 @@ return {
 			{ "<leader>g", group = "LSP / Goto / Git" },
 			{ "<leader>h", group = "Harpoon" },
 			{ "<leader>i", group = "Images" },
+			{ "<leader>j", group = "Jupyter (Molten)" },
 			{ "<leader>m", group = "Markdown" },
 			{ "<leader>mr", group = "Markdown: render" },
 			{ "<leader>ms", group = "Markdown: spell" },
