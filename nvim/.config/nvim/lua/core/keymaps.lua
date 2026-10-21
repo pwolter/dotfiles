@@ -144,14 +144,9 @@ keymap.set("n", "<leader>os", ':ObsidianQuickSwitch<CR>', { desc = "Quick switch
 keymap.set("n", "<leader>olv", ':ObsidianFollowLink vsplit<CR>', { desc = "Follow a note reference under the cursor vsplit" })
 keymap.set("n", "<leader>olh", ':ObsidianFollowLink hsplit<CR>', { desc = "Follow a note reference under the cursor hsplit" })
 keymap.set("n", "<leader>ot", ':ObsidianTemplate<CR>', { desc = "Insert a template from the templare folder" })
-keymap.set("n", "<leader>oi", ':ObsidianPasteImg<CR>', { desc = "Paste an image from the clipboard" })
+keymap.set("n", "<leader>oi", function() require("core.images").paste_image_and_save() end, { desc = "Paste image from clipboard and save" })
 keymap.set("n", "<leader>oc", ':ObsidianToggleCheckbox<CR>', { desc = "Cycle through checkbox options" })
 keymap.set("n", "<leader>of", ':ObsidianSearch<CR>', { desc = "Search (or create) notes" })
-
-
--- Images
--- (<C-a> paste-and-save lives in ftplugin/markdown.lua so <C-a> still
--- increments numbers in every other filetype)
 
 -- Open image under cursor in the Preview app (macOS)
 vim.keymap.set("n", "<leader>io", function()
