@@ -8,6 +8,8 @@ return {
     ts_config = {
       lua = { "string" }, -- don't add pairs in lua string treesitter nodes
       javascript = { "template_string" }, -- don't add pairs in javascript template_string
-    }
+    },
+    -- Plugin defaults plus typr (no auto-inserted pairs while practicing typing)
+    disable_filetype = { "TelescopePrompt", "spectre_panel", "snacks_picker_input", "typr" },
   }
 }

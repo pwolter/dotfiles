@@ -82,6 +82,9 @@ return {
         documentation = cmp.config.window.bordered(),
       },
     })
+
+    -- No completion popups while practicing typing
+    cmp.setup.filetype('typr', { enabled = false })
   end,
  }
 
