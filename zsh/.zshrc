@@ -143,17 +143,16 @@ alias l.='ls -dl .[!.]*'   # list only hidden files/dirs (dotfiles), alphabetica
 alias gp="git pull"
 alias gf="git fetch"
 alias ga="git add ."
-alias gt="git add ."
 
 alias ..="cd .."
 alias dev="cd $HOME/Development"
+alias notes="cd $HOME/Documents/Pablo/Notes/"
 
 alias hi="history | grep "
 alias pss="ps -ef | grep -v grep | grep "
 
 alias jn="$ANACONDA_HOME/bin/jupyter notebook --browser='chrome' &"
 alias jl="$ANACONDA_HOME/bin/jupyter lab --browser='chrome' &"
-alias jq="$ANACONDA_HOME/bin/jupyter qtconsole &"
 
 alias clean_hf="rm -rf $HOME/.cache/huggingface"
 
