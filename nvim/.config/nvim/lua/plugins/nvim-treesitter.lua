@@ -11,7 +11,7 @@ return {
   lazy = false, -- main branch does not support lazy-loading
   config = function()
     local ts = require('nvim-treesitter')
-
+    vim.treesitter.language.register('yaml', 'yml')
     -- Parsers to always have; latex is needed for math rendering in markdown
     ts.install({
       'lua', 'python', 'c', 'cpp', 'bash', 'json', 'yaml', 'toml',
