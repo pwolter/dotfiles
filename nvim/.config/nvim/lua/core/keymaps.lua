@@ -11,6 +11,10 @@ keymap.set("n", "<leader>qq", ":q!<CR>", { desc = "Quit without saving" }) -- qu
 keymap.set("n", "<leader>ww", ":w<CR>", { desc = "Save" }) -- save
 keymap.set("n", "gx", ":!open <c-r><c-a><CR>", { desc = "Open URL under cursor" }) -- open URL under cursor
 
+-- Move by screen row on wrapped lines, but keep counts (5j, 10k) jumping real lines
+keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+keymap.set({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+
 -- Split window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally

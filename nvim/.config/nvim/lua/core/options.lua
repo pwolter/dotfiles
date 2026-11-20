@@ -14,8 +14,11 @@ opt.expandtab = true
 opt.autoindent = true
 vim.bo.softtabstop = 2
 
--- Line Wrapping
-opt.wrap = false
+-- Line Wrapping (all filetypes)
+opt.wrap = true          -- wrap long lines visually
+opt.linebreak = true     -- break at word boundaries, not mid-word
+opt.breakindent = true   -- wrapped part keeps the line's indentation
+opt.showbreak = "↪ "     -- marks continuation rows
 
 -- Search Settings
 opt.ignorecase = true

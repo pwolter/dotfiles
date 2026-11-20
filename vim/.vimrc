@@ -171,9 +171,17 @@ set hlsearch
 " exec \"set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~\"
 " set list
 
-" Move line by line even when the line is wrapped
-map j gj
-map k gk
+" Line Wrapping (all filetypes)
+set wrap          " wrap long lines visually
+set linebreak     " break at word boundaries, not mid-word
+set breakindent   " wrapped part keeps the line's indentation
+set showbreak=↪\  " marks continuation rows
+
+" Move by screen row on wrapped lines, but keep counts (5j, 10k) jumping real lines
+nnoremap <expr> j v:count == 0 ? 'gj' : 'j'
+nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
+xnoremap <expr> j v:count == 0 ? 'gj' : 'j'
+xnoremap <expr> k v:count == 0 ? 'gk' : 'k'
 
 " Persistent undo
 set undofile                " Save undo's after file closes
